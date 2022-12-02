@@ -29,8 +29,8 @@ app.get('/', (req, res) => res.render('index', {
     products
 }));
 
-
-
+//Set static folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 const PORT = process.env.PORT || 5000; //Kollar efter port i environment variabel, kör på 5000 om inget annat är tillgängligt.
