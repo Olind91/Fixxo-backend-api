@@ -1,26 +1,26 @@
+require('dotenv').config();
+const PORT = process.env.PORT || 7000; //Kollar efter port i environment variabel, kör på 5000 om inget annat är tillgängligt.
+const MongoDBInit = require('./api_server');
 const express = require('express');
-const path = require('path'); //node.js modul som hjälper med file-paths
 const app = express();
 const exphbs = require('express-handlebars');
 const cors = require('cors');
-const products = require('./data/Products')
+const path = require('path'); //node.js modul som hjälper med file-paths
+const products = require('./data/Products');
+
 
 
 
 //initialisera middleware
-//app.use(logger);
-
-//Body Parser Middleware
-
 app.use(express.json()); //Hanterar json
-app.use(express.urlencoded({ extended:false }));  //45.18 föreläsning 4. Hasse har true här. warum?
+app.use(express.urlencoded({ extended:false }));  
 app.use(cors());
-
 
 
 //Handlebars Middleware
 app.engine('handlebars', exphbs.engine({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+
 
 
 //Homepage Route CRUD Products
@@ -29,11 +29,11 @@ app.get('/', (req, res) => res.render('index', {
     products
 }));
 
+
 //Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-const PORT = process.env.PORT || 5000; //Kollar efter port i environment variabel, kör på 5000 om inget annat är tillgängligt.
 
 //Routes för Products
 const productTags = require('./Routes/productsTags')
@@ -43,7 +43,11 @@ const router = require('./Routes/products')
 app.use('/api/products', router);
 
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
+MongoDBInit()
+app.listen(PORT, () => console.log(`Server API started on port ${PORT}`));
+
+
 
 
 
