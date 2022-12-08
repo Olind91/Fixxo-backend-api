@@ -1,12 +1,12 @@
 require('dotenv').config();
-const PORT = process.env.PORT || 7000; //Kollar efter port i environment variabel, kör på 5000 om inget annat är tillgängligt.
+const PORT = process.env.PORT || 7000; //Kollar efter port i environment variabel, kör på 7000 om inget annat är tillgängligt.
 const MongoDBInit = require('./api_server');
 const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
 const cors = require('cors');
 const path = require('path'); //node.js modul som hjälper med file-paths
-const products = require('./data/Products');
+const products = require('./Schemas/ProductSchema')
 
 
 
@@ -39,8 +39,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 const productTags = require('./Routes/productsTags')
 app.use('/api/products', productTags);
 
-const router = require('./Routes/products')
-app.use('/api/products', router);
 
 
 

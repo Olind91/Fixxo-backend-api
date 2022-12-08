@@ -1,9 +1,12 @@
 body{
     background: rgb(213,206,206);
-    background: linear-gradient(180deg, rgba(213,206,206,1) 10%, rgba(87,111,134,1) 28%, rgba(87,111,134,1) 38%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%);
+   
     
 }
-
+img{
+    height:50px;
+    width:50px;
+}
 h1{
    font-weight:bold;
   

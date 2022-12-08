@@ -41,7 +41,7 @@
     <ul class="list-group">
             {{#each products}}
             <li class="list-group-item flex-column p-3 mb-2" >
-                <img src={{this.imageName}} style="height:50px; width:50px; margin-right:1rem;">  {{this.articleNumber}} - {{this.name}} - <b>Description:</b> {{this.description}} <b>Category:</b> {{this.category}} <b>Price:</b>  ${{this.price}} <b>Rating:</b>  {{this.rating}}</li> {{!-- Oklart om imageName ska vara med här --}}
+                <img src={{this.imageName}}>  {{this.articleNumber}} - {{this.name}} - <b>Description:</b> {{this.description}} <b>Category:</b> {{this.category}} <b>Price:</b>  ${{this.price}} <b>Rating:</b>  {{this.rating}}</li> {{!-- Oklart om imageName ska vara med här --}}
             {{/each}}
     </ul>
 </div>
