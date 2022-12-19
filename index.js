@@ -27,7 +27,9 @@ app.set('view engine', 'handlebars');
 app.get('/', (req, res) => res.render('index', {
     title:'Product CRUD',
     products
+    
 }));
+
 
 
 //Set static folder

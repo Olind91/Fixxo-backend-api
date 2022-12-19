@@ -1,3 +1,7 @@
+
+
+{{!-- Product CRUD-sida. Går att skapa nya produkter men fick inte update och delete att fungera, måste göras via Postman --}}
+
 <h1 class="text-center mb-3">{{title}}</h1>
 <form action="/api/products" method="POST" class="mb-4">
     <div class="form-group mb-2">
@@ -30,6 +34,8 @@
     <input type="submit" value="Create Product" class="btn btn-success btn-block mt-3">
     
 </form>
+
+
     <input type="submit" value="Update Product" class="btn btn-primary btn-block mb-3">
     <input type="submit" value="Delete Product" class="btn btn-danger btn-block mb-3">
     
@@ -46,7 +52,7 @@
     </ul>
 </div>
         
-  
+{{!-- Show/Hide button-function --}}
 <script>
 function myFunction() {
   var x = document.getElementById("myDIV");

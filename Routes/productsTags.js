@@ -122,7 +122,6 @@ productTags.route('/').post(async (req, res) => {
 
 
 //Delete product
-
 productTags.route('/:articleNumber').delete(async (req, res) => {
            
     const found = await ProductSchema.findById(req.params.articleNumber)      
